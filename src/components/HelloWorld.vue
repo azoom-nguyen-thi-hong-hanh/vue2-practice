@@ -6,7 +6,7 @@
       Number: {{ number }}
     </div>
     <button @click="number++">Increment</button>
-    <p>{{test()}}</p>
+    <h1>{{test()}}</h1>
   </div>
 </template>
 
