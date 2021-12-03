@@ -1,3 +1,3 @@
 <template>
-    <h1>This is ContactPage</h1>
+    <h1 style="margin-top: 20px">This is ContactPage</h1>
 </template>

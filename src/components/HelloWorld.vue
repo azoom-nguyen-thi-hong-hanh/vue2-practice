@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="helloworld">
     <input type="text" placeholder="Your name" v-model="name">
     <h1>Hi, my name is {{ name }}</h1>
     <div>
@@ -27,3 +27,8 @@ export default {
   } 
 }
 </script>
+<style scoped>
+  .helloworld{
+    margin-top: 60px;
+  }
+</style>
