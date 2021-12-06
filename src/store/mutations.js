@@ -14,5 +14,8 @@ export default {
     },
     doneEdit (state) {
         state.editting = null
+    },
+    LOGIN(state, data) {
+        state.user = data
     }
 }

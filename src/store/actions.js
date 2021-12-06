@@ -7,5 +7,8 @@ export default {
     },
     doneEdit ({commit}, item) {
         commit('doneEdit', item)
+    },
+    login({ commit }, data) {
+        commit("LOGIN", data)
     }
 }

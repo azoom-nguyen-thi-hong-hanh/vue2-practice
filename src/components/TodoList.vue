@@ -10,7 +10,7 @@
                         placeholder="Nhập việc cần làm"> 
                 </div>
                 <div class="col-2"> 
-                    <button @click="Add" class="btn btn-primary">
+                    <button @click="Add" class="btn btn-primary btn-text">
                         Add task
                     </button>
                 </div>
@@ -133,10 +133,21 @@ export default {
 </script>
 
 <style scoped>
+    .hello{
+      font-size: 1.6rem;
+    }
     .delete-task {
-      font-size: 15px;
+      font-size: 1.5rem;
       cursor: pointer;
       margin-left: 20px;
+    }
+
+    .form-control{
+      font-size: 1.6rem;
+    }
+
+    .btn-text{
+      font-size: 1.4rem;
     }
     .completed label{
         color: #cccaca;

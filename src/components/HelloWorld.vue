@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'SayMyName',
+  name: 'hellowolrd',
   data() {
     return {
       name: "Hanh",
@@ -28,7 +28,9 @@ export default {
 }
 </script>
 <style scoped>
+
   .helloworld{
+    font-size: 1.6rem;
     margin-top: 60px;
   }
 </style>

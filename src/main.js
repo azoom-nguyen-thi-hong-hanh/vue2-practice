@@ -11,6 +11,7 @@ import 'sweetalert2/dist/sweetalert2.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+
 Vue.use(Vuex)
 Vue.config.productionTip = false
 

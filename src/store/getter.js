@@ -10,5 +10,8 @@ export default {
         }, 
         count: (state) => {
             return state.count
-        }
+        },
+        currentUser: state => {
+        return state.user
+        },
     }
