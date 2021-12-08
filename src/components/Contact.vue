@@ -42,6 +42,8 @@ td {
 </style>
 
 <script>
+import ky from 'ky'
+
 export default {
   data() {
     return {
@@ -49,15 +51,22 @@ export default {
     };
   },
   methods: {
-    callApi() {
-      fetch("https://provinces.open-api.vn/api/d/", {})
-        .then((response) => response.json())
-        .then((data) => (this.result = data))
+    // callApi() {
+    //   fetch("https://provinces.open-api.vn/api/d/", {})
+    //     .then((response) => response.json())
+    //     .then((data) => (this.result = data))
 
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    },
+    //     .catch((error) => {
+    //       console.error("Error:", error);
+    //     });
+    // },
+    async callApiProvince() {
+        this.result = await ky('https://provinces.open-api.vn/api/d/').json()
+            .catch((error) => {
+                console.error("Error:", error)
+                return []
+            })
+    }
   },
 };
 </script>

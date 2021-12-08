@@ -1,6 +1,6 @@
 <template>
   <div class="province">
-    <button class="btn-province" @click="callApi">Xem thêm</button>
+    <button class="btn-province" @click="callApiProvince">Xem thêm</button>
     <table>
       <tr>
         <th>STT</th>
@@ -42,6 +42,8 @@ td {
 </style>
 
 <script>
+import ky from 'ky'
+
 export default {
   data() {
     return {
@@ -49,15 +51,22 @@ export default {
     };
   },
   methods: {
-    callApi() {
-      fetch("https://provinces.open-api.vn/api/", {})
-        .then((response) => response.json())
-        .then((data) => (this.result = data))
+    // callApi() {
+    //   fetch("https://provinces.open-api.vn/api/", {})
+    //     .then((response) => response.json())
+    //     .then((data) => (this.result = data))
 
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    },
+    //     .catch((error) => {
+    //       console.error("Error:", error);
+    //     });
+    // },
+    async callApiProvince() {
+        this.result = await ky('https://provinces.open-api.vn/api/').json()
+            .catch((error) => {
+                console.error("Error:", error)
+                return []
+            })
+    }
   },
 };
 </script>
