@@ -6,13 +6,43 @@
         <th>STT</th>
         <th>Tên tỉnh thành</th>
       </tr>
-      <tr v-for="(item, index) in result" :key="index">
+      <tr v-for="(item, index) in result" :key="item.code">
         <td>{{ index++ }}</td>
         <td>{{ item.name }}</td>
       </tr>
     </table>
   </div>
 </template>
+
+<script>
+// import ky from 'ky'
+
+export default {
+  data() {
+    return {
+      result: [],
+    };
+  },
+  methods: {
+    callApiProvince() {
+      fetch("https://provinces.open-api.vn/api/", {})
+        .then((response) => response.json())
+        .then((data) => (this.result = data))
+
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    },
+    // async callApiProvince() {
+    //     this.result = await ky('https://provinces.open-api.vn/api/').json()
+    //         .catch((error) => {
+    //             console.error("Error:", error)
+    //             return []
+    //         })
+    // }
+  },
+};
+</script>
 
 <style scoped>
 .province {
@@ -40,33 +70,3 @@ td {
   border: 1px solid black;
 }
 </style>
-
-<script>
-import ky from 'ky'
-
-export default {
-  data() {
-    return {
-      result: [],
-    };
-  },
-  methods: {
-    // callApi() {
-    //   fetch("https://provinces.open-api.vn/api/", {})
-    //     .then((response) => response.json())
-    //     .then((data) => (this.result = data))
-
-    //     .catch((error) => {
-    //       console.error("Error:", error);
-    //     });
-    // },
-    async callApiProvince() {
-        this.result = await ky('https://provinces.open-api.vn/api/').json()
-            .catch((error) => {
-                console.error("Error:", error)
-                return []
-            })
-    }
-  },
-};
-</script>
